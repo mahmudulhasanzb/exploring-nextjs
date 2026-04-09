@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const BlogsPage = () => {
 
@@ -58,6 +59,9 @@ const blogs = [
             <img src={blog.image} alt="demoImg" width={100} height={100} />
             <p className="text-sm text-gray-500">{blog.description} </p>
             <p className="text-sm text-gray-500">{blog.tags.join(", ")} </p>
+            <div>
+              <Link href={`/blogs/${blog.id}`} className="btn btn-primary mt-2">Details</Link>
+            </div>
             
           </div>
         )
