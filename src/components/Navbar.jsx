@@ -1,26 +1,35 @@
+"use client"
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
+
+  const pathName = usePathname()
+  console.log("pathName in the navbar:",pathName);
+
   const links = (
     <>
       <li>
-        <Link href="/about">About me</Link>
+        <Link href="/" className= {`btn ${pathName === "/" ? "btn-primary" : ""}`}>Home</Link>
       </li>
       <li>
-        <Link href="/contact">Contact</Link>
+        <Link href="/about" className= {`btn ${pathName === "/about" ? "btn-primary" : ""}`}>About me</Link>
       </li>
       <li>
-        <Link href="/about/developers">Developers</Link>
+        <Link href="/contact" className= {`btn ${pathName === "/contact" ? "btn-primary" : ""}`}>Contact</Link>
       </li>
       <li>
-        <Link href="/blogs">Blogs</Link>
+        <Link href="/about/developers" className= {`btn ${pathName === "/about/developers" ? "btn-primary" : ""}`}>Developers</Link>
       </li>
       <li>
-        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/blogs" className= {`btn ${pathName === "/blogs" ? "btn-primary" : ""}`}>Blogs</Link>
       </li>
       <li>
-        <Link href="/users">Users</Link>
+        <Link href="/dashboard" className= {`btn ${pathName === "/dashboard" ? "btn-primary" : ""}`}>Dashboard</Link>
+      </li>
+      <li>
+        <Link href="/users" className= {`btn ${pathName === "/users" ? "btn-primary" : ""}`}>Users</Link>
       </li>
     </>
   );

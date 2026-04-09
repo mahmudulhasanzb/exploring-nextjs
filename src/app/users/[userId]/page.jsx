@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "User Details Page",
+  description: "User Details Page",
+}
 const UserDetailsPage = async ({ params }) => {
   const { userId } = await params;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);

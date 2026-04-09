@@ -1,4 +1,24 @@
 import Link from "next/link";
+import { Poppins, Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+export const metadata = {
+  title: 'Blogs Page',
+  description: 'Blogs Page',
+}
 
 const BlogsPage = () => {
 
@@ -47,7 +67,7 @@ const blogs = [
 
 
   return (
-    <div className="container mx-auto mt-5">
+    <div className={roboto.className + " container mx-auto mt-5"}>
       <h2 className="text-3xl font-bold mb-4 text-center">Blogs</h2>
       {blogs.map(blog => {
         return (
@@ -57,7 +77,7 @@ const blogs = [
             <p className="text-sm text-gray-500">{blog.date} </p>
             <p className="text-sm text-gray-500">{blog.category} </p>
             <img src={blog.image} alt="demoImg" width={100} height={100} />
-            <p className="text-sm text-gray-500">{blog.description} </p>
+            <p className={poppins.className + " text-sm text-gray-500"}>{blog.description} </p>
             <p className="text-sm text-gray-500">{blog.tags.join(", ")} </p>
             <div>
               <Link href={`/blogs/${blog.id}`} className="btn btn-primary mt-2">Details</Link>

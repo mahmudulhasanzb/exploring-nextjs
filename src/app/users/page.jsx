@@ -1,5 +1,8 @@
 import Link from "next/link";
-
+export const metadata = {
+  title: 'Users Page',
+  description: 'Users Page',
+}
 const UsersPage = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users/')
   const users = await res.json();

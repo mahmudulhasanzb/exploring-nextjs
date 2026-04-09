@@ -1,6 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-
+import vercel from "../../assets/vercel.svg"
+export const metadata = {
+  title: 'About Page',
+  description: 'About Page',
+}
 const AboutPage = () => {
   return (
     <div className="flex flex-col items-center justify-center">
@@ -24,6 +27,13 @@ const AboutPage = () => {
       >
         Contact Me
       </a>
+      <Image src={vercel} alt="hasan image" width={200} height={100} />
+      {/* <Image
+        src="https://i.ibb.co.com/cKDdhbnJ/photo.png"
+        alt="hasan image"
+        width={200}
+        height={100}
+      /> */}
     </div>
   );
 };
